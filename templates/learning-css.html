@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../assets/styles/learning-css.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <title>Learn CSS</title>
+    </head>
+
+    <body>
+        <h1>Animation</h1>
+          <div class="animation" id="running"> My animation is currently playing. </div>
+          <div class="animation" id="paused"> My animation is currently paused. </div>
+          <hr>
+          <p class="animation2"> Hello! </p>
+          <hr>
+          <div class="cont-animation3">
+            <div class="animation3"></div>
+          </div>
+          <hr>
+          <p class="animation4">The Caterpillar and Alice looked at each other for some time in silence:
+            at last the Caterpillar took the hookah out of its mouth, and addressed
+            her in a languid, sleepy voice. https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent</p>
+        <hr>
+        <h1 id="watchme">Watch me move</h1>
+            <p>
+            This example shows how to use CSS animations to make <code>H1</code>
+            elements move across the page.</p>
+            <p>
+            In addition, we output some text each time an animation event fires,
+            so you can see them in action.
+            </p>
+            <ol id="output" style="list-style-position: inside;">
+            </ol>
+            <script src="../dynamics/JS/AnimationEvent.js"></script>
+            <hr>
+
+        <div class="square">
+            <ol style="list-style-position: inside;">
+                <li><a href="#stickyexamples">Sticky</a></li>
+                <li><a href="#backgrounexamples">Background</a></li>
+                <li><a href="#transform">Transform</a></li>
+            </ol>
+        </div>
+        <hr>
+
+        <div id="fondo">
+            <button>hool</button>
+        </div>
+        <hr>
+
+        <p class="variant">This is a two-column layout of grid boxes where the first box is <b>25%</b> wide and the second is <b>75%</b>.</p><br>
+        <div class="container">
+            <div id="box1"> 25% </div>
+            <div id="box2"> 75% </div>
+        </div>
+        <hr>
+        <div class="container">
+            <div id="box1"> 25% </div>
+            <div id="box1"> 25% </div>
+            <div id="box1"> 25% </div>
+            <div id="box1"> 25% </div>
+        </div>
+        <hr>
+   
+        <div class="contIMG">
+            <img id="img1" src="..\assets\media\img\vaca.jpeg" alt="Vaquita marina">
+            <p class="top-left"> Top Left </p>
+            <p class="top-right"> Top Right </p>
+            <p class="center"> Centered Text </p>
+            <p class="bottom-left"> Bottom Left </p>
+            <p class="bottom-right"> Bottom Right </p>
+        </div>
+        <hr>
+
+        <div class="card">
+            <img id="img2" src="..\assets\media\img\vaca.jpeg" alt="Vaquita marina">
+            <p>Description</p>
+        </div>
+        <hr>
+
+        <div class="callout-info"><p>Hola</p></div>
+        <hr>
+
+        <ul>
+            <li>Apples</li>
+            <li>Oranges</li>
+            <li id="vegetables">Cabbage</li>
+            <li>Shrimp</li>
+            <li>Squid</li>
+        </ul>
+        <hr>
+        
+        <!-- https://fonts.google.com/icons -->
+        <span class="material-symbols-outlined">rocket_launch</span>
+        <!-- https://github.com/danklammer/bytesize-icons -->
+        <svg id="i-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path d="M2 30 L30 2 M30 30 L2 2" />
+        </svg>
+        <!-- https://tabler-icons.io/ -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-badge" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M17 17v-13l-5 3l-5 -3v13l5 3z"></path>
+         </svg>
+        <hr>
+        
+        <h1 id="stickyexamples">Sticky</h1>
+        <div class="sticky" id="div1"> Hello World!</div>
+        <p id="first-line"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse iaculis, arcu a bibendum fermentum, quam nunc accumsan nisl, eu porttitor lectus lectus eget lectus. Nulla congue euismod neque, quis tempus est maximus nec. Proin egestas justo sollicitudin sapien sollicitudin, nec congue eros lobortis. Curabitur ultricies laoreet ex quis ullamcorper. Suspendisse potenti. Donec facilisis lacinia ullamcorper. Aenean ac erat vitae arcu cursus tristique. Nullam non dui velit. Nullam sit amet lacus quis nibh vestibulum maximus. Suspendisse interdum leo felis, ac aliquam diam volutpat at. </p>
+        <div class="sticky" id="div2"> Hello World!</div>
+        <p id="ellipsis"> Vivamus magna velit, convallis ut purus at, facilisis lobortis elit. Aenean lacinia efficitur leo, vitae volutpat odio lacinia vitae. <span class="inline-block-element">Proin nec</span> sodales mauris. Quisque lacus orci, consectetur molestie dolor at, elementum pretium nibh. Morbi ornare risus urna, nec ultricies augue pharetra non. Nulla pulvinar ornare ipsum, cursus sagittis dolor suscipit vel. Proin augue justo, consequat a nulla ac, vestibulum fermentum orci. Donec hendrerit massa mauris, quis bibendum lectus aliquet at. Donec mattis nisi nec ipsum tincidunt euismod. Proin interdum tellus a elit pellentesque, vel condimentum lectus ultricies. Sed malesuada urna nec quam placerat bibendum. Etiam a quam vitae mauris blandit efficitur. </p>
+        <div class="sticky" id="div3"> Hello World!</div>
+        <p id="indent"> Maecenas dictum metus in leo aliquam, nec pellentesque mauris vulputate. Phasellus dui eros, efficitur et turpis a, lacinia sollicitudin lectus. In hac habitasse platea dictumst. Sed dictum augue lectus, sit amet condimentum mauris maximus nec. Fusce at ante id lorem volutpat tincidunt. In a rhoncus quam. Morbi sollicitudin accumsan velit. </p>
+        <div class="sticky" id="div4"> Hello World!</div>
+        <div class="overflow">
+            <p> Aliquam laoreet lectus a est venenatis semper in sit amet arcu. Suspendisse potenti. Curabitur quis luctus ante. Curabitur vehicula libero a odio euismod, sed aliquam velit aliquam. Maecenas accumsan, ipsum vel pharetra euismod, nunc lectus faucibus ligula, id malesuada risus lectus in metus. Nunc ligula lectus, ornare sit amet tortor at, dignissim dictum ex. Cras finibus posuere diam, non suscipit diam venenatis vitae. Fusce laoreet, erat vel volutpat cursus, tortor diam venenatis elit, sit amet commodo augue mi eget eros. Mauris ac viverra velit, id suscipit leo. </p>
+            <p> Mauris et lectus dolor. Maecenas tincidunt lacinia convallis. Donec facilisis turpis ut fringilla laoreet. Mauris eget tortor mauris. Curabitur sed consequat arcu. Curabitur quam sem, pharetra consequat hendrerit sed, blandit at nisi. Proin elementum, nulla sed blandit efficitur, erat turpis volutpat velit, vel sodales nisi mauris vel nibh. Vestibulum ultricies, urna eu iaculis commodo, quam urna vulputate dui, sit amet lobortis erat purus a mi. Praesent neque ipsum, egestas non feugiat vitae, commodo non nisi. Curabitur eget lectus orci. Integer feugiat facilisis nunc, at facilisis risus scelerisque id. Quisque eu euismod leo. Quisque sem enim, laoreet et vestibulum eget, varius sed neque. Nulla ornare et orci ac imperdiet. Duis dapibus sagittis metus ac viverra. </p>
+            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse iaculis, arcu a bibendum fermentum, quam nunc accumsan nisl, eu porttitor lectus lectus eget lectus. Nulla congue euismod neque, quis tempus est maximus nec. Proin egestas justo sollicitudin sapien sollicitudin, nec congue eros lobortis. Curabitur ultricies laoreet ex quis ullamcorper. Suspendisse potenti. Donec facilisis lacinia ullamcorper. Aenean ac erat vitae arcu cursus tristique. Nullam non dui velit. Nullam sit amet lacus quis nibh vestibulum maximus. Suspendisse interdum leo felis, ac aliquam diam volutpat at. </p>    
+        </div>
+        <hr>
+
+        <h1 id="backgrounexamples">Background</h1>
+        <div class="box-shadow">
+            <div class="gradient">
+                <div class="card-text">
+                    Beautiful <p>City</p>
+                    <div class="background-clip">
+                        <p> text </p>
+                    </div>
+                    <div class="background-clip" id="content-box">
+                        <p> content-box </p>
+                    </div>
+                    <div class="background-clip" id="padding-box">
+                        <p> padding-box </p>
+                    </div>
+                </div>
+                <div class="linear"></div>
+                <div class="radial"></div>
+                <div class="radial2"></div>
+            </div>
+         </div>
+         <hr>
+
+         <h1 id="transform">Transform</h1>
+        <h2>2D</h2>
+        <div class="cont2d">
+            <div class="Transform" id="translate">Translate</div>
+            <div class="Transform" id="rotate">Rotate</div>
+            <div class="Transform" id="Scale">Scale</div>
+            <div class="Transform" id="Skew">Skew</div>
+            <div class="Transform" id="Matrix">Matrix</div>
+        </div>
+        <h2>3D</h2>
+        <div class="cont3d">
+            <div class="Transform" id="rotateX">rotateX</div>
+            <div class="Transform" id="rotateY">rotateY</div>
+            <div class="Transform" id="rotateZ">rotateZ</div>
+            <div class="Transform" id="Matrix3d">Matrix3d</div>
+        </div>
+        <h1>Transition</h1>
+        <div class="transition">Transition</div>
+        <hr>
+
+        <section id="example-element" tabindex="0">
+            <div class="face front">1</div>
+            <div class="face back">2</div>
+            <div class="face right">3</div>
+            <div class="face left">4</div>
+            <div class="face top">5</div>
+            <div class="face bottom">6</div>
+          </section>
+          <hr>
+
+         <br><br>
+    </body>
+
+</html>
