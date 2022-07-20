@@ -1,7 +1,13 @@
 /* FUNCTIONS
 ---------------------------------------------------------------------------*/
-function random(min,max){
-    return Math.floor((Math.random()*(max-min))+min);
+function getNumberArray(n){
+    let numbers=[];
+    let exponentiation=Math.pow(n,2);
+    for(let i=1;i<exponentiation;i++){
+        numbers[i-1]=i;
+    }
+    numbers.push(0);
+    return numbers;
 }
 function createMatriz(n){
     for(let i=0;i<n;i++){
@@ -18,14 +24,8 @@ function createGrid(n){
         boardHTML.removeChild(boardHTML.firstChild);
     }
 }
-function getNumberArray(n){
-    let numbers=[];
-    let exponentiation=Math.pow(n,2);
-    for(let i=1;i<exponentiation;i++){
-        numbers[i-1]=i;
-    }
-    numbers.push(0);
-    return numbers
+function random(min,max){
+    return Math.floor((Math.random()*(max-min))+min);
 }
 function hasZero(c,r){
     let answer;
@@ -73,6 +73,7 @@ function move(event){
     if(isMoving!=false){
         movements++;
         displacementHTML(number,item);
+        document.getElementById("num_"+number).focus();
         displacementMatriz(column,row,number,isMoving);
         // console.log("moviendose",isMoving,movements,board);
         if(board.join()==winningArray.join()){
@@ -81,8 +82,30 @@ function move(event){
     }
 }
 function keyPressed(event){
-    if(event.key=="Enter"){
-        move(event);
+    let div=event.currentTarget, k=event.key;
+    let c=parseInt(div.dataset.column), r=parseInt(div.dataset.row), number=parseInt(div.dataset.number);
+    if(k==" " || k=="Enter"){
+        if(div.dataset.number!=0)
+            move(event);  
+    } else if(k=="ArrowUp" || k=="ArrowDown" || k=="ArrowLeft" || k=="ArrowRight"){
+        if(k=="ArrowUp"){
+            if((c-1)>=0){
+                number=parseInt(board[c-1][r]);
+            }
+        } else if(event.key=="ArrowDown"){
+            if((c+1)<board.length){
+                number=parseInt(board[c+1][r]);
+            }
+        } else if(event.key=="ArrowLeft"){
+            if((r-1)>=0){
+                number=parseInt(board[c][r-1]);
+            }
+        } else if(event.key=="ArrowRight"){
+            if((r+1)<board.length){
+                number=parseInt(board[c][r+1]);
+            }
+        }
+        document.getElementById("num_"+number).focus();
     }
 }
 function createItem(text1,column,row){
@@ -114,7 +137,7 @@ function getRandomMatriz(){
 /* VARIABLES
 ---------------------------------------------------------------------------*/
 var dimension=4;
-var board=[], movements=0, winningArray=getNumberArray(dimension);
+var board=[], winningArray=getNumberArray(dimension), movements=0;
 createMatriz(dimension);
 createGrid(dimension);
 getRandomMatriz();
