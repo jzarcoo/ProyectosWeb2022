@@ -87,22 +87,30 @@ function keyPressed(event){
     if(k==" " || k=="Enter"){
         if(div.dataset.number!=0)
             move(event);  
-    } else if(k=="ArrowUp" || k=="ArrowDown" || k=="ArrowLeft" || k=="ArrowRight"){
-        if(k=="ArrowUp"){
+    } else if(k=="ArrowUp" || k=="ArrowDown" || k=="ArrowLeft" || k=="ArrowRight" || k=="w" || k=="s" || k=="a" || k=="d" || k=="W" || k=="S" || k=="A" || k=="D"){
+        if(k=="ArrowUp" || k=="w" || k=="W"){
             if((c-1)>=0){
                 number=parseInt(board[c-1][r]);
+            } else {
+                number=parseInt(board[board.length-1][r]);
             }
-        } else if(event.key=="ArrowDown"){
+        } else if(event.key=="ArrowDown" || k=="s" || k=="S"){
             if((c+1)<board.length){
                 number=parseInt(board[c+1][r]);
+            } else {
+                number=parseInt(board[0][r]);
             }
-        } else if(event.key=="ArrowLeft"){
+        } else if(event.key=="ArrowLeft" || k=="a" || k=="A"){
             if((r-1)>=0){
                 number=parseInt(board[c][r-1]);
+            } else {
+                number=parseInt(board[c][board.length-1]);
             }
-        } else if(event.key=="ArrowRight"){
+        } else if(event.key=="ArrowRight" || k=="d" || k=="D"){
             if((r+1)<board.length){
                 number=parseInt(board[c][r+1]);
+            } else {
+                number=parseInt(board[c][0]);
             }
         }
         document.getElementById("num_"+number).focus();
