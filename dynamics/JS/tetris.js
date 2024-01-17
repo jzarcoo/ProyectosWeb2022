@@ -323,24 +323,20 @@ window.addEventListener("load", () => {
                 //     ctx.closePath();
                 // }
                 break;
-            case "ArrowUp":
+        case "ArrowUp":
             tetriminoUno.girar();
-                drawGame();
-                break;
-            case "ArrowDown":
-                tetriminoUno.moveDown();
-                drawGame();
-                break;
-            case "ArrowRight":
-                tetriminoUno.moveRight();
-                drawGame();
-                break;
-            case "ArrowLeft":
-                tetriminoUno.moveLeft();
-                drawGame();
-                break;
-            default:
-                break;
+            break;
+        case "ArrowDown":
+            tetriminoUno.moveDown();
+            break;
+        case "ArrowRight":
+            tetriminoUno.moveRight();
+            break;
+        case "ArrowLeft":
+            tetriminoUno.moveLeft();
+            break;
+        default:
+            break;
         }
     }, false);
 });
