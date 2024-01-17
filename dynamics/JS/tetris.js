@@ -1,4 +1,3 @@
-// MAIN
 window.addEventListener("load", () => {
     /* FUNCIONES
     ---------------------------------------------------------------------------------------------------- */
@@ -6,6 +5,7 @@ window.addEventListener("load", () => {
         tetris.cuadricula();
         tetris.dibujarMemoria();
         tetriminoUno.draw();
+	window.requestAnimationFrame(drawGame);
     }
     // function resizeCanvas() {
     //     canvas.width = 0.25 * window.innerWidth;
@@ -89,7 +89,7 @@ window.addEventListener("load", () => {
 	    this.lineasABorrar();
         }
         random() {
-            let max = 2, min = 0;
+            let max = 3, min = 0;
             let r = Math.floor((Math.random() * (max - min + 1)) + min)
             // console.log(r);
             switch (r) {
@@ -101,6 +101,9 @@ window.addEventListener("load", () => {
                     break;
                 case 2:
                     tetriminoUno = new ShapeS(canvas.width / 2, 0);
+                    break;
+                case 3:
+                    tetriminoUno = new ShapeZ(canvas.width / 2, 0);
                     break;
                 default:
                     break;
@@ -151,9 +154,14 @@ window.addEventListener("load", () => {
             this.py = posicionY;
         }
         draw() {
-            ctx.fillStyle = this.color;
+	    ctx.fillStyle = this.color;
             for (let i = 0; i < this.mapa[this.forma].x.length; i++) {
-                ctx.fillRect(this.mapa[this.forma].x[i], this.mapa[this.forma].y[i], tetris.ancho, tetris.alto);
+		let inicialX = this.mapa[this.forma].x[i];
+		let inicialY = this.mapa[this.forma].y[i];
+                ctx.fillRect(inicialX, inicialY, tetris.ancho, tetris.alto);
+		
+		ctx.strokeStyle = "#dcdcdc";
+		ctx.stroke();
             }
         }
         girar() {
@@ -228,6 +236,25 @@ window.addEventListener("load", () => {
             ];
         }
     }
+    class ShapeZ extends Tetrimino {
+        constructor(posicionX, posicionY, color, mapa, forma) {
+            super(posicionX, posicionY, color, mapa, forma);
+            this.color = "green";
+            this.forma = 0;
+        }
+        actualizaMapa() {
+            this.mapa = [
+                {
+                    x: [this.px, (this.px + tetris.ancho), this.px, (this.px - tetris.ancho)],
+                    y: [this.py, (this.py + tetris.alto), (this.py + tetris.alto), this.py],
+                },
+                {
+                    x: [this.px, (this.px - tetris.ancho), (this.px - tetris.ancho), this.px],
+                    y: [this.py, (this.py + tetris.alto), this.py, (this.py - tetris.alto)],
+                },
+            ];
+        }
+    }
     class ShapeS extends Tetrimino {
         constructor(posicionX, posicionY, color, mapa, forma) {
             super(posicionX, posicionY, color, mapa, forma);
@@ -275,13 +302,12 @@ window.addEventListener("load", () => {
     
     /* EVENTOS
     ---------------------------------------------------------------------------------------------------- */
-    drawGame();
     setInterval(() => {
         tetriminoUno.moveDown();
-        drawGame();
     }, 300);
     // resizeCanvas();
     // window.addEventListener('resize', resizeCanvas, false);
+    window.requestAnimationFrame(drawGame);
     document.addEventListener("keydown", function (e) {
         switch (e.key) {
             case "Enter":

@@ -1,3 +1,10 @@
+body {
+    display: grid;
+    place-items: center;
+    background-color: azure;
+}
 #tetris{
-    border: 1px solid #0000ff;
+    -webkit-box-shadow: 0px 22px 24px 1px rgba(0,0,0,0.41);
+    -moz-box-shadow: 0px 22px 24px 1px rgba(0,0,0,0.41);
+    box-shadow: 0px 22px 24px 1px rgba(0,0,0,0.41);
 }
