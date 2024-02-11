@@ -1,29 +1,5 @@
 import { Rectangulo } from "./Rectangulo.js";
 
-function quicksortInPlace(arr, low = 0, high = arr.length - 1) {
-    if (low < high) {
-        pivotIndex = partition(arr, low, high);
-        // Recursivamente ordenar los sub-arrays
-        quicksortInPlace(arr, low, pivotIndex - 1);
-        quicksortInPlace(arr, pivotIndex + 1, high);
-    }
-}
-
-function partition(arr, low, high) {
-    pivot = arr[high];
-    i = low - 1;
-    for (j = low; j < high; j++) {
-        if (arr[j] < pivot) {
-            i++;
-            // Intercambiar arr[i] y arr[j]
-            [arr[i], arr[j]] = [arr[j], arr[i]];
-        }
-    }
-    // Intercambiar arr[i+1] y arr[high] (colocar el pivote en su posición correcta)
-    [arr[i + 1], arr[high]] = [arr[high], arr[i + 1]];
-    return i + 1; // Índice del pivote después del particionamiento
-}
-
 function swap (arr, i, j){
     if (i == j)
 	return;
